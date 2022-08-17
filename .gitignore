@@ -1,2 +1,11 @@
 # DocProject is a documentation generator add-in
-contracts/artifacts/
+src/contracts/artifacts/
+
+# Compiler files
+cache/
+out/
+
+# Ignores development broadcast logs
+!/broadcast
+/broadcast/*
+/broadcast/*/31337/
