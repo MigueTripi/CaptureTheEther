@@ -1,11 +1,11 @@
-pragma solidity ^0.4.21;
+pragma solidity >=0.8.0;
 
 contract PredictTheFutureChallenge {
     address guesser;
     uint8 guess;
     uint256 settlementBlockNumber;
 
-    function PredictTheFutureChallenge() public payable {
+    constructor () payable {
         require(msg.value == 1 ether);
     }
 
@@ -14,7 +14,7 @@ contract PredictTheFutureChallenge {
     }
 
     function lockInGuess(uint8 n) public payable {
-        require(guesser == 0);
+        require(guesser == address(0));
         require(msg.value == 1 ether);
 
         guesser = msg.sender;
@@ -22,15 +22,16 @@ contract PredictTheFutureChallenge {
         settlementBlockNumber = block.number + 1;
     }
 
-    function settle() public {
+    function settle() payable public {
         require(msg.sender == guesser);
         require(block.number > settlementBlockNumber);
 
-        uint8 answer = uint8(keccak256(block.blockhash(block.number - 1), now)) % 10;
+        bytes32 aux = keccak256(abi.encodePacked(blockhash(block.number - 1), block.timestamp));
+        uint8 answer = uint8(uint(aux) % 10);
 
-        guesser = 0;
+        guesser = address(0);
         if (guess == answer) {
-            msg.sender.transfer(2 ether);
+            payable(msg.sender).transfer(2 ether);
         }
     }
 }
