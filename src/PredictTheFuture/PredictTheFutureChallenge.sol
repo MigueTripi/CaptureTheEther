@@ -1,6 +1,15 @@
 pragma solidity >=0.8.0;
 
+
+/**
+This time, you have to lock in your guess before the random number is generated. 
+To give you a sporting chance, there are only ten possible answers.
+Note that it is indeed possible to solve this challenge without losing any ether.
+
+ */
+
 contract PredictTheFutureChallenge {
+    //0x6204a028a5143C8e4De62b09235EC811259C2A1B
     address guesser;
     uint8 guess;
     uint256 settlementBlockNumber;
@@ -20,6 +29,18 @@ contract PredictTheFutureChallenge {
         guesser = msg.sender;
         guess = n;
         settlementBlockNumber = block.number + 1;
+    }
+
+    function getGuess() public view returns(uint8){
+        return guess;
+    }
+
+    function getSettlementBlockNumber() public view returns(uint256){
+        return settlementBlockNumber;
+    }
+
+    function getGuesser() public view returns(address){
+        return guesser;
     }
 
     function settle() payable public {

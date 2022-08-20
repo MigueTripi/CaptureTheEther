@@ -12,4 +12,8 @@ contract ChangeFieldContract {
         field = newValue;
     }
 
+    function isTrue() public pure returns(bool){
+        return true;
+    }
+
 }

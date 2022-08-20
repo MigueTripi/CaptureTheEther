@@ -1,0 +1,25 @@
+{
+  "name": "capturetheether",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "deploy:rinkeby": "bash -c 'source .env && forge script script/Force.s.sol:ForceScript --rpc-url $RINKEBY_RPC_URL --broadcast --private-key $PRIVATE_KEY --verify'",
+    "deploy:mainnet": "bash -c 'source .env && forge script DeployMainnet --rpc-url $MAINNET_RPC --broadcast --private-key $MAINNET_DEPLOYER_PK --verify --etherscan-api-key $ETHERSCAN_API_KEY'"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MigueTripi/CaptureTheEther.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MigueTripi/CaptureTheEther/issues"
+  },
+  "homepage": "https://github.com/MigueTripi/CaptureTheEther#readme"
+}
