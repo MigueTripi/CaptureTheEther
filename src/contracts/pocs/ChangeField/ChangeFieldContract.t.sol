@@ -55,7 +55,7 @@ contract ChangeFieldTest is DSTest {
     console.logBytes(isTrue);
 
     //To test only this:
-    //forge test --match-path src/contracts/pocs/ChangeFieldContract.t.sol -vv
+    //forge test --match-path src/contracts/pocs/ChangeFieldContract.t.sol -vvvv
     
     }
 

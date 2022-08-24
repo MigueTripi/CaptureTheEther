@@ -8,7 +8,7 @@ contract ChangeFieldContract {
         return field;
     }
 
-    function setField(uint8 newValue) public {
+    function setField(uint8 newValue) private {
         field = newValue;
     }
 
