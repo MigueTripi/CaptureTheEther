@@ -6,7 +6,7 @@ import "../src/Ethernaut/Token/TokenHacker.sol";
 import "forge-std/console.sol";
 
 //Execute
-//forge script script/Token.s.sol:TokenScript --rpc-url 'https://rpc.ankr.com/eth_rinkeby' --broadcast --private-key 'bbcdcf6c876839be76f70d4d2cecc1595c99dcb4bcdc9c964705f8c7a2d9ad16' --verify --etherscan-api-key '62UA4EJ6S43NHP4C5A7MSW1JSQF7GVV92N'
+//forge script script/Token.s.sol:TokenScript --rpc-url $RINKEBY_RPC_URL --broadcast --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_KEY
    
 contract TokenScript is Script {
     function setUp() public {}

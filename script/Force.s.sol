@@ -6,7 +6,7 @@ import "../src/Ethernaut/Force/ForceHacker.sol";
 import "forge-std/console.sol";
 
 //Execute
-//forge script script/Force.s.sol:ForceScript --rpc-url 'https://rpc.ankr.com/eth_rinkeby' --broadcast --private-key 'bbcdcf6c876839be76f70d4d2cecc1595c99dcb4bcdc9c964705f8c7a2d9ad16' --verify --etherscan-api-key
+//forge script script/Force.s.sol:ForceScript --rpc-url $RINKEBY_RPC_URL --broadcast --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_KEY
    
 contract ForceScript is Script {
     function setUp() public {}
